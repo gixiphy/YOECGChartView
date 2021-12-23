@@ -66,11 +66,12 @@
 -(void)refreshMap{
     
     int point = _par.sampleFrequency / (1 / 0.05); //0.05s的采样点数
-    
     if (self.dataArr.count / point > _number) {
         NSMutableArray *arr = [NSMutableArray array];
         for (int i = 0; i < point; i++) {
+            NSUInteger index = _number * point + i;
             NSString *str = self.dataArr[_number * point + i];
+            NSLog(@"%ld * %d + %d = %ld, %@",_number,point, i,index,str);
             [arr addObject:str];
         }
         [_ecg drawRealTimeECGLine:arr twoLine:_isOnly];

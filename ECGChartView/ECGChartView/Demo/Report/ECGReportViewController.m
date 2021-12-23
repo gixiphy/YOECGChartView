@@ -94,8 +94,6 @@
 }
 
 
-
-
 //返回需要缩放的视图控件 缩放过程中
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return _ecg;
